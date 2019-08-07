@@ -19,6 +19,7 @@ Game::~Game(){
 //nothing here yet
 }
 
+//initialize the game
 void Game::init(const char* title, int width, int height, bool fullscreen)
 {
 	int flags = 0;
@@ -46,13 +47,11 @@ void Game::init(const char* title, int width, int height, bool fullscreen)
 	SDL_FreeSurface(tempSurface);
 
 }
-
+//event handling currently handles how to exit. Player controls will also be placed here
 void Game::handleEvents()
 {
 	SDL_Event event;
-
 	SDL_PollEvent(&event);
-
 	switch (event.type)
 	{
 	case SDL_QUIT:
@@ -69,13 +68,13 @@ void Game::update()
 	std::cout << cnt << std::endl;
 }
 
+//render the screen and objects on the screen
 void Game::render()
 {
 	//add all our textures to be renderered
-	//whatever we pain first will be in the background
+	//whatever we paint first will be in the background
 	SDL_RenderClear(renderer);
-	//so we want our player inbetween
-	SDL_RenderCopy(renderer, playerTex, NULL, NULL); //using null for source rect and next rect
+	SDL_RenderCopy(renderer, playerTex, NULL, NULL); //using null for now to use the size of the screen
 	SDL_RenderPresent(renderer);
 }
 
