@@ -1,20 +1,22 @@
 /*
-* Wayland Bang
-* 2019
+* Wayland Bang 2019
+* All of my SDL Learnings are From: https://wiki.libsdl.org/ 
+* and Let's Make Games youtube channel : https://www.youtube.com/channel/UCAM9ZPgEIdeHAsmG50wqL1g
 */
 
-#include "Game.h"
+//goal of this script was to render my own image with the SDL library
 
+#include "Game.h"
 
 //texture manager class
 SDL_Texture* playerTex;
 
 Game::Game(){
-
+//nothing here yet
 }
 
 Game::~Game(){
-
+//nothing here yet
 }
 
 void Game::init(const char* title, int width, int height, bool fullscreen)
